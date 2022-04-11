@@ -11,6 +11,9 @@ class Play extends Phaser.Scene{
         this.load.image('starfield','./assets/starfield.png');
         // load spritesheet
         this.load.spritesheet('explosion','./assets/explosion.png',{frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
+
+
+
     }
     create() {
         // place tile sprite
@@ -137,6 +140,8 @@ class Play extends Phaser.Scene{
         // score add and repaint
         this.p1Score += ship.points;
         this.scoreLeft.text = this.p1Score;
+        // explosion audio
+        this.sound.play('sfx_explosion');
 
     }
 }
